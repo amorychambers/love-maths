@@ -40,7 +40,7 @@ function runGame(gameType) {
  * Checks the answer against the first element in the returned calculateCorrectAnswer() array
  */
 function checkAnswer() {
-    let userAnswer = parseInt(document.getElementById('answer-box').value);
+    let userAnswer = parseFloat(document.getElementById('answer-box').value).toFixed(2);
     let calculatedAnswer = calculateCorrectAnswer();
     let isCorrect = userAnswer === calculatedAnswer[0];
     if (isCorrect) {
