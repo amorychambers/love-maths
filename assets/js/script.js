@@ -30,10 +30,22 @@ function runGame(gameType) {
     }
 
 }
-
+/**
+ * Checks the answer against the first element in the returned calculateCorrectAnswer() array
+ */
 function checkAnswer() {
+    let userAnswer = parseInt(document.getElementById('answer-box').value);
+    let calculatedAnswer = calculateCorrectAnswer();
+    let isCorrect = userAnswer === calculatedAnswer[0];
+    if (isCorrect) {
+        alert('Hey! You got it right! :D');
+    } else {
+        alert(`Awww...you answered ${userAnswer}. The correct answer was ${calculatedAnswer[0]}!`);
+    }
 
-}
+    runGame(calculatedAnswer[1]);
+
+    }
 
 /**
  * Gets the operands and the operator directly from the DOM,
